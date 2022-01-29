@@ -1,11 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Footer from "./Components/Footer/Footer";
-
+import Signup from "./Pages/Signup/Signup";
 function App() {
   return (
     <>
-      {/*<Signup />*/}
+      <Signup />
       <Footer />
     </>
   );

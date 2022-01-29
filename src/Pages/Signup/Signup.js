@@ -22,6 +22,7 @@ application/json
 
 import React, { useState } from "react";
 import Post from "../../Components/Post/Post";
+import "../Signup/Signup.scss";
 
 const Signup = () => {
   const [inputs, setInputs] = useState({
@@ -37,6 +38,8 @@ const Signup = () => {
     showAddressPop: false,
     Address: "",
     Zonecode: "",
+    Sex: 1,
+    BirthDate: "",
   });
 
   const {
@@ -52,11 +55,13 @@ const Signup = () => {
     showAddressPop,
     Address,
     Zonecode,
+    Sex,
+    BirthDate,
   } = inputs;
 
   const onChange = (e) => {
     const { value, name } = e.target;
-    console.log(e.target);
+
     setInputs({
       ...inputs,
       [name]: value,
@@ -268,10 +273,36 @@ const Signup = () => {
         </div>
 
         <div className="signup_Sex_wrap">
-          <div className="signup_Sex_title">
-            성별<span className="ico">*</span>
+          <div className="signup_Sex_title">성별</div>
+          <div className="signup_Sex_block" onClick={onChange}>
+            <label>
+              <input type="radio" name="Sex" value="1" defaultChecked />
+              남자
+            </label>
+            <label>
+              <input type="radio" name="Sex" value="2" />
+              여자
+            </label>
+            <label>
+              <input type="radio" name="Sex" value="0" />
+              선택 안함
+            </label>
           </div>
-          <div className="signup_Sex_block">성별칸!!</div>
+        </div>
+
+        <div className="signup_Birth_wrap">
+          <div className="signup_Birth_title">생년월일</div>
+          <div className="signup_Birth_block">
+            <input
+              type="text"
+              name="BirthDate"
+              onChange={onChange}
+              placeholder="YYYY / MM / DD"
+              maxLength="8"
+              size="14"
+              pattern="[0-9]*"
+            />
+          </div>
         </div>
       </div>
     </div>

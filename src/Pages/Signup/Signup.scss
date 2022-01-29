@@ -1,0 +1,7 @@
+@import "../../Styles/reset.scss";
+@import "../../Styles/common.scss";
+
+.signup_main {
+  @include flexCenter();
+  flex-direction: column;
+}

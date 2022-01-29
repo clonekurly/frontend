@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import DaumPostcode from "react-daum-postcode";
 //https://velog.io/@limes/React-Postcode-Daum-%EC%9A%B0%ED%8E%B8-%EB%B2%88%ED%98%B8-%EC%B0%BE%EA%B8%B0-api
 
 const Post = ({ getData }) => {
-  //const [Address, setIsAddress] = useState("");
-  //const [ZoneCode, setIsZoneCode] = useState();
-
   const handleComplete = (data) => {
     let fullAddress = data.address;
     let extraAddress = "";
@@ -21,13 +18,7 @@ const Post = ({ getData }) => {
       fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
     }
     getData(fullAddress, data.zonecode);
-    //getData("Zonecode", data.zonecode);
 
-    //Address = fullAddress;
-    //Zonecode = data.zonecode;
-
-    //console.log(Address);
-    //console.log(Zonecode);
     console.log("✔ post 컴포넌트 : ", data.zonecode);
     console.log("✔ post 컴포넌트 : ", fullAddress);
   };
