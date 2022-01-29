@@ -4,4 +4,16 @@
 .signup_main {
   @include flexCenter();
   flex-direction: column;
+
+  [class*="wrap"] {
+    display: flex;
+    flex-direction: row;
+  }
+  input[type*="text"] {
+    display: flex;
+    flex-direction: column;
+  }
+  button[name*="Address"] {
+    display: block;
+  }
 }

@@ -65,7 +65,6 @@ const Signup = () => {
     setInputs({
       ...inputs,
       [name]: value,
-      //핸드폰번호 text아닌 숫자로 입력될까봐...
     });
     console.log(inputs);
   };
@@ -259,14 +258,16 @@ const Signup = () => {
                     console.log(inputs);
                   }}
                 ></input>
-                <button name="Address" onClick={onClick_Pop}>
-                  🔍︎ 주소 재검색
-                </button>
-                <p>샛별 배송 가능 지역</p>
+                <div className="signup_Address_btn">
+                  <button name="Address" onClick={onClick_Pop}>
+                    🔍︎ 주소 재검색
+                  </button>
+                </div>
               </>
             )}
 
             <div className="signup_Address_Info">
+              {Zonecode && Address ? <p>샛별 배송 가능 지역</p> : null}
               <p>배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
             </div>
           </div>
