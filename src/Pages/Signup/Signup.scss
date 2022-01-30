@@ -4,16 +4,73 @@
 .signup_main {
   @include flexCenter();
   flex-direction: column;
+  width: 640px;
+  margin: 0 auto;
 
   [class*="wrap"] {
     display: flex;
     flex-direction: row;
   }
+
   input[type*="text"] {
     display: flex;
     flex-direction: column;
+    width: 330px;
+    height: 45px;
+    margin-right: 16px;
   }
-  button[name*="Address"] {
-    display: block;
+  span[class*="ico"] {
+    color: #ee6a7b;
+  }
+
+  .signup_Address_full {
+    display: flex;
+    flex-direction: row;
+  }
+  .signup_title {
+    width: 100%;
+    border-bottom: solid 2px #333;
+    h2 {
+      font-weight: 700;
+      font-size: 28px;
+      color: #333;
+      line-height: 35px;
+      text-align: center;
+      letter-spacing: -1px;
+      margin: 0 auto;
+      padding: 30px 0;
+    }
+    p {
+      padding-bottom: 10px;
+      font-size: 12px;
+      color: #666;
+      line-height: 17px;
+      text-align: right;
+    }
+  }
+
+  .signup_content {
+    padding-top: 10px;
+    width: 100%;
+    [class*="wrap"] {
+      padding: 10px 20px;
+    }
+    [class*="title"] {
+      width: 20%;
+      margin-right: 5px;
+      padding-top: 10px;
+    }
+
+    /*
+    [class*="input"] {
+      margin-right: 5px;
+    }*/
+    [class*="check"] {
+      text-align: center;
+      height: 45px;
+      line-height: 45px;
+      border: solid;
+      padding: 0 5%;
+    }
   }
 }

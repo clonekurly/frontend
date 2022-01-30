@@ -133,6 +133,7 @@ const Signup = () => {
               name="Pwd"
               placeholder="비밀번호를 입력해주세요"
               maxLength="16"
+              type="text"
               onChange={onChange}
               value={Pwd}
               onClick={onClick_Info}
@@ -234,38 +235,40 @@ const Signup = () => {
                 }}
               />
             ) : null}
-            {Zonecode ? (
-              <input type="text" defaultValue={Zonecode}></input>
-            ) : null}
-            {Address ? (
-              <input type="text" defaultValue={Address}></input>
-            ) : null}
+            <div className="signup_Address_full">
+              <div className="signup_Address_input">
+                {Zonecode ? <input type="text" value={Zonecode}></input> : null}
+                {Address ? <input type="text" value={Address}></input> : null}
 
-            {!(Zonecode && Address) ? (
-              <button name="Address" onClick={onClick_Pop}>
-                🔍︎ 주소 검색
-              </button>
-            ) : (
-              <>
-                <input
-                  type="text"
-                  placeholder="나머지 주소를 입력하시오"
-                  onChange={(e) => {
-                    setInputs({
-                      ...inputs,
-                      Address: `${Address} ${String(e.target.value)}`,
-                    });
-                    console.log(inputs);
-                  }}
-                ></input>
+                {!(Zonecode && Address) ? (
+                  <button name="Address" onClick={onClick_Pop}>
+                    🔍︎ 주소 검색
+                  </button>
+                ) : (
+                  <>
+                    <input
+                      type="text"
+                      placeholder="나머지 주소를 입력하시오"
+                      onChange={(e) => {
+                        setInputs({
+                          ...inputs,
+                          Address: `${Address} ${String(e.target.value)}`,
+                        });
+                        console.log(inputs);
+                      }}
+                    ></input>
+                  </>
+                )}
+              </div>
+
+              {!(Zonecode && Address) ? null : (
                 <div className="signup_Address_btn">
                   <button name="Address" onClick={onClick_Pop}>
                     🔍︎ 주소 재검색
                   </button>
                 </div>
-              </>
-            )}
-
+              )}
+            </div>
             <div className="signup_Address_Info">
               {Zonecode && Address ? <p>샛별 배송 가능 지역</p> : null}
               <p>배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
