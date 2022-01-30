@@ -1,12 +1,12 @@
 import "./App.css";
 import Footer from "./Components/Footer/Footer";
 
-import Signup from "./Pages/Signup/Signup";
+import Loign from "./Pages/Login/Login";
 
 function App() {
   return (
     <>
-      <Signup />
+      <Loign />
       <Footer />
     </>
   );
