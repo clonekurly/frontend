@@ -269,7 +269,7 @@ const Signup = () => {
                 </div>
               )}
             </div>
-            <div className="signup_Address_Info">
+            <div className="signup_Address_info">
               {Zonecode && Address ? <p>샛별 배송 가능 지역</p> : null}
               <p>배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
             </div>
