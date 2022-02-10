@@ -1,0 +1,33 @@
+.background {
+  margin-top: 10px;
+  background-color: gainsboro;
+  background-image: url("../Image/main_img1.png");
+  background-size: cover;
+  color: white;
+  text-align: center;
+  height: 300px;
+}
+
+.main_image {
+  width: 100%;
+}
+
+.main_1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+// product
+.prod_padding {
+  padding: 15px;
+}
+
+.text1 {
+  text-align: left;
+}
+
+.text2 {
+  text-align: left;
+  font-weight: bold;
+}
