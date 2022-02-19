@@ -32,3 +32,4 @@ const FooterIconData = [
 ];
 
 export default FooterIconData;
+
